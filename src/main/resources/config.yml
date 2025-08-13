@@ -1,0 +1,76 @@
+# Configuração do Plugin Arte da Guerra
+# Versão: 1.0.0-SNAPSHOT
+
+# Configurações Gerais
+geral:
+  debug: false
+  idioma: 'pt_BR'
+  prefixo: '§6[Arte da Guerra]§r'
+  
+# Configurações do Core
+core:
+  versao: '1.0.0-SNAPSHOT'
+  modo_desenvolvimento: false
+  auto_save: true
+  save_intervalo: 300 # segundos
+
+# Configurações do Sistema de Lobby
+lobby:
+  mundo_nome: 'lobby'
+  spawn_x: 0
+  spawn_y: 100
+  spawn_z: 0
+  teleport_cooldown: 3 # segundos
+  protecao_ativada: true
+  itens_navegacao: true
+
+# Configurações das Eras
+eras:
+  era_1:
+    nome: 'Primitiva'
+    periodo: '3.000.000 - 10.000 a.C.'
+    desbloqueada: true
+    mundo: 'era_primitiva'
+  era_2:
+    nome: 'Pós-Primitiva'
+    periodo: '10.000 - 3.000 a.C.'
+    desbloqueada: true
+    mundo: 'era_pos_primitiva'
+  era_3:
+    nome: 'Medieval'
+    periodo: '476 - 1.453 d.C.'
+    desbloqueada: true
+    mundo: 'era_medieval'
+  era_4:
+    nome: 'Industrial'
+    periodo: '1.760 - 1.840'
+    desbloqueada: false
+    mundo: 'era_industrial'
+  era_5:
+    nome: 'Moderna'
+    periodo: '1.900 - 1.990'
+    desbloqueada: false
+    mundo: 'era_moderna'
+  era_6:
+    nome: 'Contemporânea'
+    periodo: '1.990 - 2.020'
+    desbloqueada: false
+    mundo: 'era_contemporanea'
+  era_7:
+    nome: 'Futurista'
+    periodo: '2.020+'
+    desbloqueada: false
+    mundo: 'era_futurista'
+
+# Mensagens do Plugin
+mensagens:
+  plugin_ativado: '§aPlugin Arte da Guerra ativado com sucesso!'
+  plugin_desativado: '§cPlugin Arte da Guerra desativado!'
+  sem_permissao: '§cVocê não tem permissão para usar este comando!'
+  jogador_apenas: '§cEste comando só pode ser usado por jogadores!'
+  era_nao_encontrada: '§cEra não encontrada! Use /eras para ver as eras disponíveis.'
+  era_bloqueada: '§cEsta era ainda não foi desbloqueada!'
+  teleport_sucesso: '§aTeletransportado com sucesso!'
+  teleport_cooldown: '§cAguarde {tempo} segundos antes de se teletransportar novamente!'
+  lobby_criado: '§aLobby criado com sucesso!'
+  mundo_nao_encontrado: '§cMundo não encontrado!'

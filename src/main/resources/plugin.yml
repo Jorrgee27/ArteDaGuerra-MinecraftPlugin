@@ -1,0 +1,84 @@
+name: ArteDaGuerra
+version: '1.0.0-SNAPSHOT'
+main: br.com.artedaguerra.ArteDaGuerraCore
+api-version: '1.21'
+description: 'Plugin que simula a evolução da humanidade através de 7 eras históricas com sistema de lobby temático'
+author: 'Arte da Guerra Team'
+website: 'https://github.com/Jorrgee27/ArteDaGuerra-MinecraftPlugin'
+
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - WorldEdit
+  - WorldGuard
+  - LuckPerms
+
+commands:
+  artedaguerra:
+    description: 'Comando principal do plugin Arte da Guerra'
+    usage: '/artedaguerra [subcomando]'
+    permission: artedaguerra.admin
+    aliases: [adg, guerra]
+  lobby:
+    description: 'Teletransporta o jogador para o lobby das eras'
+    usage: '/lobby'
+    permission: artedaguerra.lobby
+    aliases: [hub]
+  era:
+    description: 'Teletransporta o jogador para uma era específica'
+    usage: '/era <numero>'
+    permission: artedaguerra.era
+  eras:
+    description: 'Lista todas as eras disponíveis'
+    usage: '/eras'
+    permission: artedaguerra.eras
+    aliases: [listeras]
+
+permissions:
+  artedaguerra.*:
+    description: 'Acesso completo ao plugin Arte da Guerra'
+    children:
+      artedaguerra.admin: true
+      artedaguerra.lobby: true
+      artedaguerra.era: true
+      artedaguerra.eras: true
+      artedaguerra.era.1: true
+      artedaguerra.era.2: true
+      artedaguerra.era.3: true
+      artedaguerra.era.4: true
+      artedaguerra.era.5: true
+      artedaguerra.era.6: true
+      artedaguerra.era.7: true
+  artedaguerra.admin:
+    description: 'Permissões administrativas do plugin'
+    default: op
+  artedaguerra.lobby:
+    description: 'Permite usar o comando /lobby'
+    default: true
+  artedaguerra.era:
+    description: 'Permite usar o comando /era'
+    default: true
+  artedaguerra.eras:
+    description: 'Permite usar o comando /eras'
+    default: true
+  artedaguerra.era.1:
+    description: 'Acesso à Era 1: Primitiva'
+    default: true
+  artedaguerra.era.2:
+    description: 'Acesso à Era 2: Pós-Primitiva'
+    default: true
+  artedaguerra.era.3:
+    description: 'Acesso à Era 3: Medieval'
+    default: true
+  artedaguerra.era.4:
+    description: 'Acesso à Era 4: Industrial'
+    default: op
+  artedaguerra.era.5:
+    description: 'Acesso à Era 5: Moderna'
+    default: op
+  artedaguerra.era.6:
+    description: 'Acesso à Era 6: Contemporânea'
+    default: op
+  artedaguerra.era.7:
+    description: 'Acesso à Era 7: Futurista'
+    default: op
