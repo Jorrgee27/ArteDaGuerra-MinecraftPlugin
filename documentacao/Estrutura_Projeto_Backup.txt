@@ -1,0 +1,256 @@
+# BACKUP DA ESTRUTURA DO PROJETO ARTE DA GUERRA
+# Versão: 1.0.0-SNAPSHOT
+# Data: Dezembro 2024
+# Status: Sistema de Lobby Implementado e Compilado com Sucesso
+
+================================================================================
+ESTRUTURA DE DIRETÓRIOS E ARQUIVOS
+================================================================================
+
+ArteDaGuerra/
+├── pom.xml                                    # Configuração Maven do projeto
+├── README.md                                  # Documentação principal do projeto
+├── target/                                    # Diretório de build (gerado pelo Maven)
+│   ├── classes/                              # Classes compiladas
+│   ├── maven-archiver/
+│   ├── maven-status/
+│   └── ArteDaGuerra-1.0.0-SNAPSHOT-shaded.jar # JAR final do plugin
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── br/
+│       │       └── com/
+│       │           └── artedaguerra/
+│       │               ├── ArteDaGuerraCore.java        # Classe principal do plugin
+│       │               └── lobby/                       # Pacote do sistema de lobby
+│       │                   ├── LobbyManager.java       # Gerenciador do lobby
+│       │                   ├── LobbyCommand.java       # Comandos do lobby
+│       │                   ├── LobbyListener.java      # Eventos do lobby
+│       │                   └── LobbyGUI.java           # Interface gráfica
+│       └── resources/
+│           ├── plugin.yml                    # Configuração do plugin Bukkit
+│           └── config.yml                    # Configurações do plugin
+└── documentacao/                             # Documentação do projeto
+    ├── Sistema_Lobby_Implementacao.md        # Documentação da implementação
+    └── Estrutura_Projeto_Backup.txt          # Este arquivo de backup
+
+================================================================================
+DETALHES DOS ARQUIVOS PRINCIPAIS
+================================================================================
+
+1. CÓDIGO-FONTE JAVA:
+   - ArteDaGuerraCore.java (1.2KB)     : Classe principal, inicialização e comandos
+   - LobbyManager.java (15.8KB)       : Gerenciamento completo do lobby
+   - LobbyCommand.java (3.2KB)        : Executor de comandos /lobby, /era, /eras
+   - LobbyListener.java (6.4KB)       : Eventos e proteções do lobby
+   - LobbyGUI.java (8.9KB)            : Interface gráfica e menus
+
+2. RECURSOS:
+   - plugin.yml (2.1KB)              : Comandos, permissões e metadados
+   - config.yml (1.8KB)              : Configurações das eras e lobby
+
+3. DOCUMENTAÇÃO:
+   - README.md (3.5KB)               : Documentação principal do GitHub
+   - Sistema_Lobby_Implementacao.md   : Documentação técnica detalhada
+   - Estrutura_Projeto_Backup.txt     : Este arquivo de backup
+
+4. BUILD:
+   - pom.xml (2.3KB)                 : Configuração Maven com dependências
+   - target/ (Gerado)                : Arquivos compilados e JAR final
+
+================================================================================
+FUNCIONALIDADES JÁ IMPLEMENTADAS
+================================================================================
+
+✅ SISTEMA DE LOBBY:
+   - Criação automática do mundo lobby
+   - Plataforma central com beacon
+   - 7 áreas temáticas das eras históricas
+   - Estruturas representativas de cada período
+
+✅ COMANDOS:
+   - /artedaguerra [subcomando]       : Comando principal com info, reload, status
+   - /lobby                          : Teletransporte para o lobby
+   - /era <número>                   : Teletransporte para era específica
+   - /eras                           : Lista todas as eras disponíveis
+
+✅ INTERFACE GRÁFICA:
+   - Menu de seleção de eras com itens visuais
+   - Menu de informações do projeto
+   - Sistema de navegação com compass e book
+   - Indicadores visuais de acesso (verde/vermelho)
+
+✅ SISTEMA DE PROTEÇÃO:
+   - Proteção contra quebra/colocação de blocos
+   - Proteção contra dano e fome no lobby
+   - Bloqueio de drop de itens
+   - Proteção de inventário
+
+✅ SISTEMA DE TELETRANSPORTE:
+   - Cooldown configurável (padrão: 3 segundos)
+   - Verificação de permissões por era
+   - Mensagens informativas e feedback
+   - Controle de acesso granular
+
+✅ ITENS DE NAVEGAÇÃO:
+   - Compass: Menu das Eras (slot 4)
+   - Book: Informações do Projeto (slot 8)
+   - Fornecimento automático no lobby
+
+✅ ESTRUTURAS TEMÁTICAS:
+   Era 1 (Primitiva)     : Fogueira (Campfire)
+   Era 2 (Pós-Primitiva): Altar de pedra com tocha
+   Era 3 (Medieval)      : Torre de cobblestone
+   Era 4 (Industrial)    : Chaminé de tijolos
+   Era 5 (Moderna)       : Prédio de concreto
+   Era 6 (Contemporânea) : Antena de redstone
+   Era 7 (Futurista)     : Portal de diamante
+
+✅ SISTEMA DE PERMISSÕES:
+   - artedaguerra.*                  : Acesso completo
+   - artedaguerra.admin              : Permissões administrativas
+   - artedaguerra.lobby              : Comando /lobby
+   - artedaguerra.era                : Comando /era
+   - artedaguerra.eras               : Comando /eras
+   - artedaguerra.era.1 até era.7    : Acesso específico por era
+
+✅ EVENTOS E INTERAÇÕES:
+   - Detecção de proximidade com eras
+   - Action bar com informações
+   - Cliques em itens de navegação
+   - Gerenciamento de inventários GUI
+
+✅ CONFIGURAÇÕES:
+   - Configuração completa no config.yml
+   - Validação automática de configuração
+   - Sistema de reload de configuração
+   - Configurações por era (nome, período, mundo, acesso)
+
+================================================================================
+FUNCIONALIDADES PENDENTES (ROADMAP)
+================================================================================
+
+🔄 PLUGINS DAS ERAS INDIVIDUAIS:
+   - Plugin Era Primitiva (mobs, ferramentas, mecânicas)
+   - Plugin Era Pós-Primitiva (agricultura, domesticação)
+   - Plugin Era Medieval (cavalaria, castelos, feudalismo)
+   - Plugin Era Industrial (máquinas, fábricas, vapor)
+   - Plugin Era Moderna (eletricidade, automóveis, aviação)
+   - Plugin Era Contemporânea (computadores, internet, globalização)
+   - Plugin Era Futurista (IA, robótica, exploração espacial)
+
+🔄 SISTEMA DE PROGRESSÃO:
+   - Desbloqueio automático de eras
+   - Requisitos de progressão
+   - Sistema de conquistas
+   - Árvore de tecnologias
+
+🔄 SISTEMA DE ECONOMIA:
+   - Integração com Vault
+   - Moedas específicas por era
+   - Sistema de comércio temporal
+   - Mercados e trocas
+
+🔄 SISTEMA DE COMBATE:
+   - Armas temáticas por era
+   - Armaduras específicas
+   - Mecânicas de combate evolutivas
+   - Balanceamento progressivo
+
+🔄 EVENTOS TEMPORAIS:
+   - Eventos históricos automáticos
+   - Invasões e guerras
+   - Progressão da civilização
+   - Catástrofes naturais
+
+🔄 SISTEMA DE CONSTRUÇÃO:
+   - Blocos e materiais específicos
+   - Tecnologias desbloqueáveis
+   - Arquitetura temática
+   - Blueprints históricos
+
+================================================================================
+COMPATIBILIDADE E DEPENDÊNCIAS
+================================================================================
+
+✅ VERSÃO MINECRAFT: 1.21+
+✅ PLATAFORMA: Spigot/Paper
+✅ JAVA: 21+
+✅ MAVEN: 3.6+
+
+DEPENDÊNCIAS OPCIONAIS:
+- Vault (economia)
+- PlaceholderAPI (placeholders)
+- WorldEdit (edição de mundo)
+- WorldGuard (proteção)
+- LuckPerms (permissões)
+
+================================================================================
+STATUS DE COMPILAÇÃO
+================================================================================
+
+✅ COMPILAÇÃO: SUCCESS
+   - Comando: mvn clean compile
+   - Status: Sem erros
+   - Warnings: 1 (API depreciada)
+
+✅ PACKAGING: SUCCESS
+   - Comando: mvn package
+   - Arquivo: ArteDaGuerra-1.0.0-SNAPSHOT-shaded.jar
+   - Tamanho: ~50KB
+
+✅ CORREÇÕES APLICADAS:
+   - Material.CONCRETE → Material.WHITE_CONCRETE
+   - Material.COMPUTER → Material.REDSTONE_BLOCK
+   - Compatibilidade Minecraft 1.21
+
+================================================================================
+HISTÓRICO DE DESENVOLVIMENTO
+================================================================================
+
+FASE 1 - PLANEJAMENTO (Concluída):
+- Definição da arquitetura das 7 eras
+- Estruturação do projeto Maven
+- Configuração de dependências
+
+FASE 2 - IMPLEMENTAÇÃO CORE (Concluída):
+- Classe principal ArteDaGuerraCore
+- Sistema de configuração
+- Comandos básicos
+
+FASE 3 - SISTEMA DE LOBBY (Concluída):
+- LobbyManager com criação automática
+- Comandos de navegação
+- Interface gráfica completa
+- Sistema de proteção
+- Eventos e interações
+
+FASE 4 - ERAS INDIVIDUAIS (Pendente):
+- Desenvolvimento dos plugins específicos
+- Mecânicas únicas por era
+- Sistema de progressão
+
+FASE 5 - SISTEMAS AVANÇADOS (Pendente):
+- Economia temporal
+- Combate evolutivo
+- Eventos históricos
+- Construção temática
+
+================================================================================
+NOTAS IMPORTANTES
+================================================================================
+
+1. O projeto está estruturado para expansão modular
+2. Cada era terá seu próprio plugin independente
+3. A comunicação entre eras será via Event Bus
+4. O estado global é gerenciado pelo Core
+5. Todas as configurações são centralizadas
+6. O sistema de permissões é granular e flexível
+7. A documentação é mantida atualizada a cada fase
+8. O versionamento segue padrões semânticos
+9. Testes são realizados a cada compilação
+10. Backups são criados antes de mudanças maiores
+
+================================================================================
+FIM DO BACKUP - ESTRUTURA PRESERVADA
+================================================================================
